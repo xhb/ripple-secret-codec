@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "base-x": "^3.0.3",
-    "bignumber.js": "^5.0.0",
+    "bignumber.js": "^5.0.0"
   },
   "devDependencies": {},
   "repository": {
