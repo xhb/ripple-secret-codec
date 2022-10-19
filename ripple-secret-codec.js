@@ -14,11 +14,11 @@ const base58 = require('base-x')(alphab)
 const bignum = require('bignumber.js')
 const crypto = require('crypto')
 const sha256 = (data) => { return crypto.createHash('sha256').update(data).digest() }
-const prefix = new Buffer([33])
+const prefix = Buffer.from([33])
 const pad128 = '0000000000000000000000000000000000000000' // zero pad for hex input and dec output
 
 function encodeHex(r_seed_hex){
-	const p_seed_hex = Buffer.concat([prefix, new Buffer((pad128 + r_seed_hex.toString(16)).substr(-32), 'hex')])
+	const p_seed_hex = Buffer.concat([prefix, Buffer.from((pad128 + r_seed_hex.toString(16)).substr(-32), 'hex')])
 	const chksum_hex = sha256(sha256(p_seed_hex)).slice(0,4)
 	const secret_hex = Buffer.concat([p_seed_hex, chksum_hex])
 	const secret_b58 = base58.encode(secret_hex)
@@ -26,7 +26,7 @@ function encodeHex(r_seed_hex){
 }
 
 function decodeHex(secret_b58){
-	const secret_hex = new Buffer(base58.decode(secret_b58))
+	const secret_hex = Buffer.from(base58.decode(secret_b58))
 	const chksum_hex = secret_hex.slice(-4)
 	const r_seed_hex = secret_hex.slice(1,17).toString('hex')
 	return { secret_hex, r_seed_hex }
