@@ -9,7 +9,7 @@
 // Hex int. seeds within range: 0x0000 - 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 // Dec int. seeds within range: 0 - 340282366920938463463374607431768211455
 
-const alphab = 'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz'
+const alphab = 'xpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAryz'
 const base58 = require('base-x')(alphab)
 const bignum = require('bignumber.js')
 const crypto = require('crypto')

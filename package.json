@@ -1,5 +1,5 @@
 {
-  "name": "ripple-secret-codec",
+  "name": "@xhbmygod/ripple-secret-codec",
   "version": "1.0.3",
   "description": "Encodes/decodes Ripple secrets from/to hex or decimal seeds.",
   "main": "ripple-secret-codec.js",
